@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html, body{
+  font-family: 'Poppins', sans-serif;
+  /* max-width: 100%; */
+  overflow-x: hidden;
+}
+
+/* button */
+.btn-primary{
+  background-color: #00a2e9;
+  border-radius: 15px;
+  border-color: #00a2e9;
+  padding: 10px 45px;
+  color: white;
+}
+.btn-outline-primary{
+  background-color: transparent;
+  border-radius: 15px;
+  border-color: #00a2e9;
+  padding: 10px 45px;
+  color: #00a2e9;
+}
+
+.btn-outline{
+  background-color: #ffffff; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 45px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-outline-white{
+  background-color: transparent; 
+  color: white; 
+  border: 2px solid #ffffff;
+}
+
+.btn-outline-white:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Navbar */
+.nav-item .nav-link{
+  font-size: 18px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.scroll-nav-active{
+  background-color: white;
+  /* border-bottom: 1px solid #00a2e9; */
+  box-shadow: 1px 1px 11px -1px rgba(1, 1, 1, .08);  
+}
+
+.text-nav-active{
+  color: black;
+}
+
+/* hero */
+
+#hero{
+  background-image: url("../../assets/images/bg-hero.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  
+}
+
+.hero-title{
+  padding-top: 200px;
+}
+
+/* responsive layar 450 */
+@media screen and (min-width: 450px){
+  .hero-text{
+  font-size: 35px;
+  font-weight: 600;
+  }
+}
+
+/* responsive layar 550 */
+@media screen and (min-width: 550px){
+  .hero-text{
+  font-size: 45px;
+  font-weight: 600;
+  }
+}
+
+/* responsive layar 800 */
+@media screen and (min-width: 800px){
+  .hero-text{
+  font-size: 55px;
+  font-weight: 600;
+  }
+}
+
+/* join */
+.stripe{
+  height: 5px;
+  width: 40px;
+  background-color: #00a2e9;
+}
+
+/* video */
+
+#video{
+  background-image: url("../../assets/images/il-bg-video.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+
+/* foto */
+/* paralax background*/
+.section-foto{
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax{
+  background-image: url("../../assets/images/il-bg-foto.jpg");
+}
+
+.stripe-putih{
+  height: 5px;
+  width: 40px;
+  background-color: #ffffff;
+}
