@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="CDlcxyXaE3PpbP9M05L1zVI5LzHx0NDXdaMRcAwcDkI" />
 
     <link rel="shortcut icon" href="{{ asset('assets/icons/ic-logo.ico') }}">
     <title>SMKS Al-Falah Nagreg</title>
