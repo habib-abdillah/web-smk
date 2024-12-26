@@ -17,7 +17,7 @@
         <div class="container ">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col">
-                    <div class="bg-white rounded-3 p-3 shadow d-flex justify-content-between align-items-center"
+                    <div class="bg-white rounded-3 mb-2 p-3 shadow d-flex justify-content-between align-items-center"
                         data-aos="flip-right">
                         <div>
                             <p>Pendidikan <br> Berkualitas</p>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col">
-                    <div class="bg-white rounded-3 p-3 shadow d-flex justify-content-between align-items-center"
+                    <div class="bg-white rounded-3 mb-2 p-3 shadow d-flex justify-content-between align-items-center"
                         data-aos="flip-right">
                         <div>
                             <p>Pendidikan <br> Berakhlak</p>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col">
-                    <div class="bg-white rounded-3 p-3 shadow d-flex justify-content-between align-items-center"
+                    <div class="bg-white rounded-3 mb-2 p-3 shadow d-flex justify-content-between align-items-center"
                         data-aos="flip-right">
                         <div>
                             <p>Pendidikan <br> Muamalah</p>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col">
-                    <div class="bg-white rounded-3 p-3 shadow d-flex justify-content-between align-items-center"
+                    <div class="bg-white rounded-3 mb-2 p-3 shadow d-flex justify-content-between align-items-center"
                         data-aos="flip-right">
                         <div>
                             <p>Pendidikan <br> Teknologi</p>
@@ -102,7 +102,7 @@
             </div>
 
             <div class="footer-berita text-center">
-                <a href="" class="btn btn-outline-primary">Berita Lainnya</a>
+                <a href="/berita" class="btn btn-outline-primary">Berita Lainnya</a>
             </div>
         </div>
     </section>
@@ -194,16 +194,24 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-6">
-                    <img src="{{ asset('assets/images/il-photo-01.png') }}" class="img-fluid" alt="">
+                    <a href="{{ asset('assets/images/il-photo-01.png') }}" class="image-link">
+                        <img src="{{ asset('assets/images/il-photo-01.png') }}" class="img-fluid" alt="">
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6">
-                    <img src="{{ asset('assets/images/il-photo-02.png') }}" class="img-fluid" alt="">
+                    <a href="{{ asset('assets/images/il-photo-02.png') }}" class="image-link">
+                        <img src="{{ asset('assets/images/il-photo-02.png') }}" class="img-fluid" alt="">
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6">
-                    <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="">
+                    <a href="{{ asset('assets/images/il-photo-03.png') }}" class="image-link">
+                        <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="">
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6">
-                    <img src="{{ asset('assets/images/il-photo-04.png') }}" class="img-fluid" alt="">
+                    <a href="{{ asset('assets/images/il-photo-04.png') }}" class="image-link">
+                        <img src="{{ asset('assets/images/il-photo-04.png') }}" class="img-fluid" alt="">
+                    </a>
                 </div>
             </div>
         </div>
