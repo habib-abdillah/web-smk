@@ -33,7 +33,14 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <button class="btn btn-primary">Register</button>
+                @auth
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                @else
+                    <button class="btn btn-primary">Register</button>
+                @endauth
             </div>
         </div>
     </div>
