@@ -189,7 +189,7 @@
                     <h5 class="fw-bold text-white">Foto Kegiatan</h5>
                 </div>
                 <div>
-                    <a href="" class="btn btn-outline btn-outline-white">Foto Lainnya</a>
+                    <a href="/foto" class="btn btn-outline btn-outline-white">Foto Lainnya</a>
                 </div>
             </div>
             <div class="row">
