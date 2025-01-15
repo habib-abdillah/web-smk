@@ -65,13 +65,8 @@
                                                 <td>
                                                     <a href="{{ route('blog.edit', $artikel->id) }}"
                                                         class="btn btn-warning">Edit</a>
-                                                    {{-- <a href="{{ route('blog.destroy', $artikel->id) }}"
-                                                        class="btn btn-danger" data-confirm-delete="true">Hapus</a> --}}
-                                                    <form action="{{ route('blog.destroy', $artikel->id) }}" method="post">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-danger"
-                                                            data-confirm-delete="true">Hapus</button>
-                                                    </form>
+                                                    <a href="{{ route('blog.destroy', $artikel->id) }}"
+                                                        class="btn btn-danger" data-confirm-delete="true">Hapus</a>
                                                 </td>
                                             </tr>
                                         @endforeach

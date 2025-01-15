@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 use Alert;
 use App\Models\Blog;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
 
     public function index()
     {
-        // $title = 'Delete Data!';
-        // $text = "Are you sure you want to delete?";
-        // confirmDelete($title, $text);
-
-        return view('admin.blog.index', [
-            'artikels' => Blog::orderBy('id', 'desc')->get()
-        ]);
+        $artikels = Blog::orderBy('id', 'desc')->get();
+        $title = 'Delete Artikel!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+        return view('admin.blog.index', compact('artikels'));
     }
 
     public function create()
@@ -30,7 +29,7 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'image' => 'required|max:1000|mimes:jpg,jepg,png,webp',
             'desc' => 'required|min:20',
@@ -39,6 +38,10 @@ class BlogController extends Controller
             'image.required' => 'Foto Wajib Diisi',
             'desc.required' => 'Artikel Wajib Diisi',
         ]);
+
+        if ($validator->fails()) {
+            return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+        }
 
         //image
         $fileName = time() . '.' . $request->image->extension();
@@ -103,7 +106,7 @@ class BlogController extends Controller
             $fileCheck = '';
         }
 
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'image' => $fileCheck,
             'desc' => 'required|min:20',
@@ -113,14 +116,15 @@ class BlogController extends Controller
             'desc.required' => 'Artikel Wajib Diisi',
         ]);
 
+        if ($validator->fails()) {
+            return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+        }
+
         //jika ada image baru 
         if ($request->hasFile('image')) {
             if (Storage::disk('public')->exists('artikel/' . $artikel->image)) {
                 Storage::disk('public')->delete('artikel/' . $request->old_image);
             }
-            // if (\File::exists('artikel' . $artikel->image)) {
-            //     \File::delete('artikel' . $request->old_image);
-            // }
             $fileName = time() . '.' . $request->image->extension();
             $request->file('image')->storeAs('artikel', $fileName);
         }
@@ -164,8 +168,6 @@ class BlogController extends Controller
             'desc' => $dom->saveHTML(),
         ]);
 
-        // return redirect(route('blog'))->with('success', 'Data artikel berhasil diupdate!');
-        // Alert::success('Hore!', 'Post Created Successfully');
         toast('Data artikel berhasil diupdate!', 'success', 'top-right');
         return redirect(route('blog'));
     }

@@ -1,7 +1,6 @@
-<nav
-    class="navbar navbar-expand-lg py-3 fixed-top {{ Request::segment(1) == '' ? 'navbar-dark' : 'navbar-light shadow' }}">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="{{ asset('assets/icons/ic-logo.png') }}" height="55"
+        <a class="navbar-brand" href="/"><img src="{{ asset('assets/icons/ic-logo.png') }}" height="55"
                 alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,8 +15,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Sambutan Kepala Sekolah</a></li>
-                        <li><a class="dropdown-item" href="#">Berita Terbaru</a></li>
-                        <li><a class="dropdown-item" href="#">Galeri</a></li>
+                        <li><a class="dropdown-item" href="/berita">Berita Terbaru</a></li>
+                        <li><a class="dropdown-item" href="/foto">Galeri</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -71,7 +70,7 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <button class="btn btn-primary">PPDB</button>
+                <a href="https://taplink.cc/smksalfalah" class="btn btn-primary">PPDB</a>
             </div>
         </div>
     </div>

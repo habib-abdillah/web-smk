@@ -3,6 +3,7 @@
 html, body{
   font-family: 'Poppins', sans-serif;
   /* max-width: 100%; */
+  margin-top: 40px;
   overflow-x: hidden;
 }
 
@@ -48,6 +49,9 @@ html, body{
 }
 
 /* Navbar */
+
+
+
 .nav-item .nav-link{
   font-size: 18px;
   margin-left: 5px;
@@ -71,7 +75,7 @@ html, body{
   background-size: cover;
   background-position: center;
   height: 600px;
-  
+  margin-top: 100px
 }
 
 .hero-title{
@@ -141,4 +145,37 @@ html, body{
   height: 5px;
   width: 40px;
   background-color: #ffffff;
+}
+
+.stripe-hitam{
+  height: 5px;
+  width: 40px;
+  background-color: #000000;
+}
+
+.cards {
+  margin: 0 auto;
+  text-align: center;
+	display: -webkit-flex;
+	display: flex;
+  border-radius: 10px;
+	-webkit-justify-content: center; 
+  justify-content: center;
+  -webkit-flex-wrap: wrap; 
+	flex-wrap: wrap;
+	margin-top: 15px;
+	padding: 1.5%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.cards:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+}
+
+.caro {
+  height: 700px; 
+  object-fit: cover;
 }

@@ -2,14 +2,14 @@
 
 @section('content')
     {{-- hero --}}
-    <section id="hero" class="px-0">
+    {{-- <section id="hero" class="px-0">
         <div class=" text-center text-white">
             <div class="hero-title" data-aos="fade-up">
                 <div class="hero-text">Selamat Datang <br>Di SMKS Al-Falah Nagreg</div>
                 <h5>Sekolah menengah kejuruan berbasis Pesantren Al-Qur'an</h5>
             </div>
         </div>
-    </section>
+    </section> --}}
     {{-- hero --}}
 
     {{-- program --}}
@@ -66,39 +66,21 @@
             </div>
 
             <div class="row py-5">
-                <div class="col-lg-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/il-berita-01.png') }}" class="img-fluid mb-3" alt="">
-                        <div class="konten-berita">
-                            <p class="mb-3 text-secondary">21/04/2024</p>
-                            <h4 class="fw-bold mb-3">Pengajian Bulanan Pesantren Al-Falah</h4>
-                            <p class="text-secondary">#smkbisa</p>
-                            <a href="" class="text-decoration-none text-danger">Selengkapnya</a>
+                @foreach ($artikels as $items)
+                    <div class="col-lg-4">
+                        <div class="card border-0">
+                            <img src="{{ asset('storage/artikel/' . $items->image) }}" class="img-fluid mb-3"
+                                alt="">
+                            <div class="konten-berita">
+                                <p class="mb-3 text-secondary">{{ $items->created_at }}</p>
+                                <h4 class="fw-bold mb-3">{{ $items->judul }}</h4>
+                                <p class="text-secondary">#smkbisa</p>
+                                <a href="/detail/{{ $items->slug }}"
+                                    class="text-decoration-none text-danger">Selengkapnya</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/il-berita-01.png') }}" class="img-fluid mb-3" alt="">
-                        <div class="konten-berita">
-                            <p class="mb-3 text-secondary">21/04/2024</p>
-                            <h4 class="fw-bold mb-3">Pengajian Bulanan Pesantren Al-Falah</h4>
-                            <p class="text-secondary">#smkbisa</p>
-                            <a href="" class="text-decoration-none text-danger">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/il-berita-01.png') }}" class="img-fluid mb-3" alt="">
-                        <div class="konten-berita">
-                            <p class="mb-3 text-secondary">21/04/2024</p>
-                            <h4 class="fw-bold mb-3">Pengajian Bulanan Pesantren Al-Falah</h4>
-                            <p class="text-secondary">#smkbisa</p>
-                            <a href="" class="text-decoration-none text-danger">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="footer-berita text-center">
@@ -193,26 +175,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-6">
-                    <a href="{{ asset('assets/images/il-photo-01.png') }}" class="image-link">
-                        <img src="{{ asset('assets/images/il-photo-01.png') }}" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <a href="{{ asset('assets/images/il-photo-02.png') }}" class="image-link">
-                        <img src="{{ asset('assets/images/il-photo-02.png') }}" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <a href="{{ asset('assets/images/il-photo-03.png') }}" class="image-link">
-                        <img src="{{ asset('assets/images/il-photo-03.png') }}" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <a href="{{ asset('assets/images/il-photo-04.png') }}" class="image-link">
-                        <img src="{{ asset('assets/images/il-photo-04.png') }}" class="img-fluid" alt="">
-                    </a>
-                </div>
+                @foreach ($photos as $photo)
+                    <div class="col-lg-3 col-md-3 col-6">
+                        <a href="{{ asset('storage/photo/' . $photo->image) }}" class="image-link">
+                            <div class="crop">
+                                <img src="{{ asset('storage/photo/' . $photo->image) }}" width="600" height="350"
+                                    style="width: 300px; height: 250px; object-fit: cover;"alt="">
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

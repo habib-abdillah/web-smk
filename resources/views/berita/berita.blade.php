@@ -5,43 +5,28 @@
         <div class="container" data-aos="flip-up">
 
             <div class="header-berita text-center">
-                <h2 class="fw-bold">Berita Kegiatan SMKS Al-Falah Nagreg</h2>
+                <div class="d-flex align-items-center">
+                    <div class="stripe-hitam me-2"></div>
+                    <h2 class="fw-bold">Berita Kegiatan SMKS Al-Falah Nagreg</h2>
+                </div>
             </div>
 
             <div class="row py-5">
-                <div class="col-lg-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/il-berita-01.png') }}" class="img-fluid mb-3" alt="">
-                        <div class="konten-berita">
-                            <p class="mb-3 text-secondary">21/04/2024</p>
-                            <h4 class="fw-bold mb-3">Pengajian Bulanan Pesantren Al-Falah</h4>
-                            <p class="text-secondary">#smkbisa</p>
-                            <a href="" class="text-decoration-none text-danger">Selengkapnya</a>
+                @foreach ($artikels as $items)
+                    <div class="col-lg-4">
+                        <div class="card border-0">
+                            <img src="{{ asset('storage/artikel/' . $items->image) }}" class="img-fluid mb-3"
+                                alt="">
+                            <div class="konten-berita">
+                                <p class="mb-3 text-secondary">{{ $items->created_at }}</p>
+                                <h4 class="fw-bold mb-3">{{ $items->judul }}</h4>
+                                <p class="text-secondary">#smkbisa</p>
+                                <a href="/detail/{{ $items->slug }}"
+                                    class="text-decoration-none text-danger">Selengkapnya</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/il-berita-01.png') }}" class="img-fluid mb-3" alt="">
-                        <div class="konten-berita">
-                            <p class="mb-3 text-secondary">21/04/2024</p>
-                            <h4 class="fw-bold mb-3">Pengajian Bulanan Pesantren Al-Falah</h4>
-                            <p class="text-secondary">#smkbisa</p>
-                            <a href="" class="text-decoration-none text-danger">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/il-berita-01.png') }}" class="img-fluid mb-3" alt="">
-                        <div class="konten-berita">
-                            <p class="mb-3 text-secondary">21/04/2024</p>
-                            <h4 class="fw-bold mb-3">Pengajian Bulanan Pesantren Al-Falah</h4>
-                            <p class="text-secondary">#smkbisa</p>
-                            <a href="" class="text-decoration-none text-danger">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="footer-berita text-center">

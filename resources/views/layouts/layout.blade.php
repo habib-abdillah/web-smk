@@ -7,7 +7,31 @@
     <meta name="google-site-verification" content="CDlcxyXaE3PpbP9M05L1zVI5LzHx0NDXdaMRcAwcDkI" />
 
     <link rel="shortcut icon" href="{{ asset('assets/icons/ic-logo.ico') }}">
-    <title>SMKS Al-Falah Nagreg</title>
+
+    {{-- Meta tampil Whatsapp --}}
+    @if (Request::segment(1) == 'detail')
+        <meta property="og:title" content="{{ $artikel->judul }}">
+        <meta name="description" content="{{ $artikel->judul }}">
+        <meta property="og:url" content="http://smkalfalah2nagreg.sch.id/detail/{{ $artikel->slug }}" />
+        <meta property="og:description" content="{{ $artikel->judul }}">
+        @if ($artikel->image)
+            <meta property="og:image" content="{{ asset('storage/artikel/' . $artikel->image) }}" />
+        @else
+            <meta property="og:image" content="{{ asset('assets/icons/ic-logo.png') }}">
+        @endif
+        <meta property="og:type" content="article">
+        <title>SMKS AL-FALAH 1 | {{ $artikel->judul }}</title>
+    @else
+        <meta property="og:title" content="SMKS AL-FALAH NAGREG" />
+        <meta name="description" content="SMK Berbasis Pesantren Al-Qur'an">
+        <meta property="og:url" content="http://smkalfalah2nagreg.sch.id">
+        <meta property="og:description" content="SMKS AL-FALAH NAGREG">
+        <meta property="og:image" content="{{ asset('assets/icons/ic-logo.png') }}">
+        <meta property="og:type" content="article">
+        <title>SMKS AL-FALAH NAGREG</title>
+    @endif
+    {{-- Meta tampil Whatsapp --}}
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -23,6 +47,8 @@
     {{-- Navbar --}}
     @include('layouts.navbar')
 
+    @include('layouts.carousel')
+
     {{-- Content --}}
     <main>
         @yield('content')
@@ -37,39 +63,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{ asset('assets/js/magnific.js') }}"></script>
+    <script src="{{ asset('assets/js/canvas.js') }}"></script>
 
     {{-- Aos --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        // document.getElementById("demo").innerHTML = window.location.pathname;
-        const navbar = document.querySelector(".fixed-top");
-        if (window.location.pathname == "/") {
-            window.onscroll = () => {
-                if (window.scrollY > 100) {
-                    navbar.classList.add("scroll-nav-active");
-                    navbar.classList.add("text-nav-active");
-                    navbar.classList.remove("navbar-dark");
-                    navbar.classList.add("navbar-light");
-                } else {
-                    navbar.classList.remove("scroll-nav-active");
-                    navbar.classList.remove("text-nav-active");
-                    navbar.classList.remove("navbar-light");
-                    navbar.classList.add("navbar-dark");
-                }
-            };
-        } else {
-            window.onscroll = () => {
-                if (window.scrollY > 10) {
-                    navbar.classList.add("scroll-nav-active");
-                    navbar.classList.add("text-nav-active");
-                } else {
-                    navbar.classList.remove("scroll-nav-active");
-                    navbar.classList.remove("text-nav-active");
-                }
-            };
-        }
-
         //Animasi Aos
         AOS.init();
 
@@ -88,6 +87,7 @@
             });
         });
     </script>
+    <script></script>
 
 </body>
 

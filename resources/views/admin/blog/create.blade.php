@@ -56,12 +56,9 @@
                                             <div class="custom-file">
                                                 <input type="file"
                                                     class="custom-file-input @error('image') is-invalid @enderror"
-                                                    id="Inputimage" value="{{ old('judul') }}" name="image">
+                                                    id="Inputimage" value="{{ old('image') }}" name="image">
                                                 <label class="custom-file-label" for="Inputimage">Choose file</label>
                                             </div>
-                                            {{-- <div class="input-group-append">
-                                                <span class="input-group-text">Upload</span>
-                                            </div> --}}
                                         </div>
                                         @error('image')
                                             <div class="text-danger">
