@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <section id="berita" class="py-5" style="margin-top: 100px">
+    <section id="berita" class="py-5">
         <div class="container" data-aos="flip-up">
 
             <div class="header-berita text-center">

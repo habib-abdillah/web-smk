@@ -47,8 +47,6 @@
     {{-- Navbar --}}
     @include('layouts.navbar')
 
-    @include('layouts.carousel')
-
     {{-- Content --}}
     <main>
         @yield('content')

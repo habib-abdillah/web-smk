@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <section id="detail" style="margin-top: 100px" class="py-5">
+    <section id="detail" class="py-5">
         <div class="container col-xxl-8">
             <div class="d-flex mb-3">
                 <a href="/">Home</a> / <a href="/berita">Berita</a> / Pengajian
