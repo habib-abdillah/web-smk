@@ -128,10 +128,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
-                role="button">
-                <i class="fas fa-th-large"></i>
-            </a>
+            <form method="POST" action="/logout">
+                @csrf
+                <a href="#" onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link">
+                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                </a>
+            </form>
         </li>
     </ul>
 </nav>

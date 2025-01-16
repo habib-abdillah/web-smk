@@ -197,6 +197,18 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
+                            class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                            <p>
+                                Logout
+                            </p>
+                        </a>
+                    </form>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
